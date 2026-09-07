@@ -7,5 +7,5 @@ export const siteConfig = {
   instagram: "https://instagram.com/diversiondj",
   instagramHandle: "@diversiondj",
   location: "Santiago, Chile",
-  whatsapp: "https://wa.me/56928622664",
+  whatsapp: "https://wa.me/56988190847",
 };
