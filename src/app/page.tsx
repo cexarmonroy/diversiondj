@@ -18,16 +18,28 @@ export default function Home() {
         <HeroSection />
 
         <div className="mt-10 grid gap-10 sm:mt-12 sm:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(280px,380px)] lg:gap-14">
-          <div className={`order-2 lg:order-1 ${ui.sectionGap}`}>
-            <AboutSection />
-            <ExperienceSection />
-            <MusicStylesSection />
-            <GallerySection />
+          <div className="order-1 flex flex-col gap-10 sm:gap-12 lg:order-1">
+            <div className="order-1 lg:order-4">
+              <GallerySection />
+            </div>
+            <div className="order-2 lg:order-1">
+              <AboutSection />
+            </div>
+            <div className="order-3 lg:order-2">
+              <ExperienceSection />
+            </div>
+            <div className="order-4 lg:order-3">
+              <MusicStylesSection />
+            </div>
           </div>
 
-          <aside className="order-1 space-y-8 lg:order-2 lg:sticky lg:top-6 lg:self-start">
-            <BookingSection />
-            <TestimonialsSection />
+          <aside className="order-2 flex flex-col gap-8 lg:order-2 lg:sticky lg:top-6 lg:self-start">
+            <div className="order-1 lg:order-2">
+              <TestimonialsSection />
+            </div>
+            <div className="order-2 lg:order-1">
+              <BookingSection />
+            </div>
           </aside>
         </div>
       </main>
