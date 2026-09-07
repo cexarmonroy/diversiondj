@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 import { ExperienceSection } from "@/components/ExperienceSection";
 import { MusicStylesSection } from "@/components/MusicStylesSection";
+import { GallerySection } from "@/components/GallerySection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { BookingSection } from "@/components/BookingSection";
 import { Footer } from "@/components/Footer";
@@ -21,6 +22,7 @@ export default function Home() {
             <AboutSection />
             <ExperienceSection />
             <MusicStylesSection />
+            <GallerySection />
           </div>
 
           <aside className="order-1 space-y-8 lg:order-2 lg:sticky lg:top-6 lg:self-start">

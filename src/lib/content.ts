@@ -1,5 +1,5 @@
 export const aboutParagraphs = [
-  "Soy Cesar Monroy, DJ profesional con más de 20 años de experiencia animando eventos, fiestas y celebraciones en Santiago y alrededores. Mi estilo Open Format me permite adaptarme a cualquier público y mantener la pista llena toda la noche.",
+  "Soy Cesar Monroy, DJ profesional con más de 20 años de experiencia musicalizando eventos, fiestas y celebraciones en Santiago y alrededores. Mi estilo Open Format me permite adaptarme a cualquier público y mantener la pista llena toda la noche.",
   "Mi enfoque está en leer al público en tiempo real: combino hits actuales, clásicos y géneros variados para crear una experiencia musical única en cada evento. Cada set es personalizado según el tipo de celebración y las preferencias del cliente.",
   "Especializado en matrimonios, fiestas de empresa y eventos privados. Profesionalismo, puntualidad y la energía correcta en el momento justo — eso es lo que me diferencia.",
 ];

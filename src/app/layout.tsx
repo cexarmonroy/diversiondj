@@ -3,7 +3,29 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { siteConfig } from "@/lib/config";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
+
+const siteUrl = getSiteUrl();
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "EntertainmentBusiness",
+  name: siteConfig.brand,
+  alternateName: siteConfig.name,
+  description:
+    "DJ Open Format con +20 años de experiencia. Matrimonios, fiestas de empresa y eventos privados en Santiago, Chile.",
+  image: `${siteUrl}/images/profile-avatar.png`,
+  url: siteUrl,
+  telephone: siteConfig.whatsapp.replace("https://wa.me/", "+"),
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Santiago",
+    addressCountry: "CL",
+  },
+  areaServed: siteConfig.location,
+  sameAs: [siteConfig.instagram],
+};
 
 const syne = Syne({
   variable: "--font-syne",
@@ -18,6 +40,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: `${siteConfig.name} | ${siteConfig.brand} — DJ para eventos en Santiago`,
   description:
     "DJ Open Format con +20 años de experiencia. Matrimonios, fiestas de empresa y eventos privados en Santiago, Chile. Reserva tu fecha.",
@@ -34,6 +57,12 @@ export const metadata: Metadata = {
     description: siteConfig.tagline,
     locale: "es_CL",
     type: "website",
+    url: siteUrl,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | ${siteConfig.brand}`,
+    description: siteConfig.tagline,
   },
 };
 
@@ -54,6 +83,12 @@ export default function RootLayout({
       className={`${syne.variable} ${dmSans.variable} h-full`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      </head>
       <body className="min-h-full antialiased" suppressHydrationWarning>
         <BackgroundEffects />
         {children}
