@@ -3,6 +3,7 @@ import "server-only";
 import { Resend } from "resend";
 import type { Booking } from "@/lib/booking-types";
 import { siteConfig } from "@/lib/config";
+import { getSiteUrl } from "@/lib/site-url";
 
 export function isEmailConfigured() {
   return Boolean(
@@ -24,8 +25,7 @@ function formatCreatedAt(date: string) {
 }
 
 function buildAdminUrl() {
-  const base = process.env.SITE_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
-  return `${base}/admin`;
+  return `${getSiteUrl()}/admin`;
 }
 
 function escapeHtml(value: string) {
